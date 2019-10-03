@@ -1,0 +1,1121 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Technical documentation for the implementation of Evertec's Checkout solution">
+      
+      
+        <link rel="canonical" href="https://elio-developer.github.io/checkout/webCheckout/">
+      
+      
+        <meta name="author" content="Eliezer Ferrá">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Web Checkout - Checkout</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|&display=fallback">
+        <style>body,input{font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="grey" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#web-checkout" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://elio-developer.github.io/checkout/" title="Checkout" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Checkout
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Web Checkout
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://elio-developer.github.io/checkout/" title="Checkout" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    Checkout
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Payment Services
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Payment Services
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Web Checkout
+      </label>
+    
+    <a href="./" title="Web Checkout" class="md-nav__link md-nav__link--active">
+      Web Checkout
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#payment-process-description" title="Payment Process Description" class="md-nav__link">
+    Payment Process Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizable-screen-elements" title="Customizable Screen Elements" class="md-nav__link">
+    Customizable Screen Elements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-methods" title="Payment Methods" class="md-nav__link">
+    Payment Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-method-selection-screen" title="Payment Method Selection Screen" class="md-nav__link">
+    Payment Method Selection Screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-verification-service" title="Address Verification Service" class="md-nav__link">
+    Address Verification Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-description" title="Parameter Description" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-structure" title="Request Structure" class="md-nav__link">
+    Request Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-structure" title="Response Structure" class="md-nav__link">
+    Response Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-messages-displayed-in-web-checkout" title="Error messages displayed in Web Checkout" class="md-nav__link">
+    Error messages displayed in Web Checkout
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../credit/" title="Process Credit" class="md-nav__link">
+      Process Credit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ach/" title="Process ACH" class="md-nav__link">
+      Process ACH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wallet/" title="Process Wallet" class="md-nav__link">
+      Process Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trxSearch/" title="Transaction Search" class="md-nav__link">
+      Transaction Search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../onlineResponse/" title="Online Response" class="md-nav__link">
+      Online Response
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Other Services
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Other Services
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../achServices/" title="ACH Services" class="md-nav__link">
+      ACH Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../closing/" title="Daily Closing Process" class="md-nav__link">
+      Daily Closing Process
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Testing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Sandbox Credentials" class="md-nav__link">
+      Sandbox Credentials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../postman/" title="Postman Collection" class="md-nav__link">
+      Postman Collection
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      API Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        API Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Samples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Samples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webCheckout_sample/" title="Web Checkout" class="md-nav__link">
+      Web Checkout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../credit_sample/" title="Process Credit" class="md-nav__link">
+      Process Credit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ach_sample/" title="Process ACH" class="md-nav__link">
+      Process ACH
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wallet_sample/" title="Process Wallet" class="md-nav__link">
+      Process Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trxSearch_sample/" title="Transaction Search" class="md-nav__link">
+      Transaction Search
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../responseCodes/" title="Response Codes" class="md-nav__link">
+      Response Codes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../paymentMethod/" title="Payment Methods" class="md-nav__link">
+      Payment Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#payment-process-description" title="Payment Process Description" class="md-nav__link">
+    Payment Process Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizable-screen-elements" title="Customizable Screen Elements" class="md-nav__link">
+    Customizable Screen Elements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#payment-methods" title="Payment Methods" class="md-nav__link">
+    Payment Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment-method-selection-screen" title="Payment Method Selection Screen" class="md-nav__link">
+    Payment Method Selection Screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-verification-service" title="Address Verification Service" class="md-nav__link">
+    Address Verification Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-description" title="Parameter Description" class="md-nav__link">
+    Parameter Description
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-structure" title="Request Structure" class="md-nav__link">
+    Request Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-structure" title="Response Structure" class="md-nav__link">
+    Response Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-messages-displayed-in-web-checkout" title="Error messages displayed in Web Checkout" class="md-nav__link">
+    Error messages displayed in Web Checkout
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="web-checkout">Web Checkout</h1>
+<p>This section explains the details of integration of the Web Checkout service</p>
+<h2 id="payment-process-description">Payment Process Description</h2>
+<p>The process begins with the merchant, when a client clicks the payment button implemented in the merchant’s website, after the merchant displayed the amount to be paid to the customer. The amount will remain unchanged when being sent to the service; the transaction will reflect what the merchant sends as the paid amount.</p>
+<p>The merchant’s application processes the client’s payment through the web service, which links it to Web Checkout. When the merchant uses the web service, the web service call must include the parameters specified in <a href="#parameter-description">this section</a></p>
+<p>The web service receives the merchant’s request and redirects to Web Checkout. This Payment Service consists of three main pages. The first page asks the Client to select a payment method, the second page displays the information the Client just entered for confirmation, and a third page shows the result of the payment transaction.</p>
+<h2 id="customizable-screen-elements">Customizable Screen Elements</h2>
+<p>This section presents the different screens elements that Web Checkout allows merchants to customize.</p>
+<h3 id="payment-methods">Payment Methods</h3>
+<p>In Web Checkout the merchant has the ability to accept the following methods of payment:</p>
+<ul>
+<li>ACH (personal, savings, commercial)</li>
+<li>Visa credit &amp; debit card</li>
+<li>MasterCard credit &amp; debit card</li>
+<li>American Express credit card</li>
+<li>ATH® debit card from financial institutions certified by the ATH® Network</li>
+</ul>
+<h3 id="payment-method-selection-screen">Payment Method Selection Screen</h3>
+<p><img alt="" src="../images/screen_1.png" /></p>
+<p>The previous image shows the screen where the client selects the payment method and it includes references to the merchant customizable elements.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Reference</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td>Merchant image or logo. Must be in JPEG format and must not exceed the 100KB. The dimensions for the logo/image  are 700 x 100.</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>Title that identifies the customer (i.e. Subscriber, Insured, etc.)</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td>The merchant can specify the label to identify the accountID parameter sent in the parameters (i.e. Subscription, Membership, etc.).<br><br><strong>Note</strong>: Depending on the sensitivity of this information, the Merchant may choose a mask that shows only the last 4 digits.</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td>The merchant can specify a URL to which the client will be returned to if the button is pressed.<br><br><strong>Note</strong>: By default, this button just closes the window/tab</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td>Label for the Return Policy link (i.e. Terms &amp; Conditions, etc.).<br><br><strong>Note</strong> : By default, value is Refund Policy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="address-verification-service">Address Verification Service</h3>
+<p>The Address Verification System (AVS) is a system used to verify the address of a person claiming to own a credit card. The system will check the billing address of the credit card provided by the user with the address on file at the credit card company or issuing bank.</p>
+<p>Checkout offers this service in a limited way. When active, Checkout will request the zip code related to the billing address of the credit card and send the information in the authorization message. If the zip codes do not match, Checkout will automatically reverse the transaction (if it was authorized) and display a message to the customer indicating that they need to review the payment information.</p>
+<p>This service is only available for Web Checkout.</p>
+<h3 id="implementation">Implementation</h3>
+<p>The merchant must be registered in Evertec’s Checkout service and must have a username and a password. Evertec must also know the IP address from which the merchant will access the service. Therefore, the programming to use the service must be on the server side to validate correctly the IP address from which the service is being accessed.</p>
+<p>Once the Merchant has sent the required parameters to the web service, it will return a response in case of a successful verification, the Web Checkout URL is: <em>https://checkout.evertecinc.com/V2?Token+Language</em>. The merchant has to redirect the customer to the URL of this response.</p>
+<p>In case of an unsuccessful transaction, the service may return: a code with an error number (See possible response codes on the “Response Codes” section) or an error message.</p>
+<p>The programmer must have special considerations when programming the payment button. For example, once the user clicks on the button, it may become disabled and display a message that indicates that the transaction is being processed. Please include any mechanism that simulates this wait, this so to prevent the user from clicking on the button multiple times. Every time the user clicks, a new Token request is made, and this generates failed transactions, once the Token has expired, they become Timeout-Expired transactions.</p>
+<h2 id="parameter-description">Parameter Description</h2>
+<p>The  URLs of this service are the following:</p>
+<ul>
+<li>Development<ul>
+<li>https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/</li>
+</ul>
+</li>
+<li>Production<ul>
+<li>https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/</li>
+</ul>
+</li>
+</ul>
+<p>A JSON payload sample can be found <a href="../webCheckout_sample#request-payload">here</a></p>
+<h3 id="request-structure">Request Structure</h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Parameter</strong></th>
+<th align="center"><strong>Type</strong></th>
+<th align="center"><strong>Required</strong></th>
+<th align="left"><strong>Description</strong></th>
+<th align="center"><strong>Length</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">username</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Merchant username provided by Evertec.</td>
+<td align="center">1-50</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Merchant password provided by Evertec.</td>
+<td align="center">1-50</td>
+</tr>
+<tr>
+<td align="left">accountID</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Account number for the client of the merchant.</td>
+<td align="center">1-50</td>
+</tr>
+<tr>
+<td align="left">customerName</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Customer name for the client of the merchant.</td>
+<td align="center">1-100</td>
+</tr>
+<tr>
+<td align="left">customerEmail</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Customer email for the client of the merchant.</td>
+<td align="center">1-100</td>
+</tr>
+<tr>
+<td align="left">address1</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Client merchant address1.</td>
+<td align="center">0-100</td>
+</tr>
+<tr>
+<td align="left">address2</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Client merchant address2.</td>
+<td align="center">0-100</td>
+</tr>
+<tr>
+<td align="left">city</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Client merchant city.</td>
+<td align="center">0-100</td>
+</tr>
+<tr>
+<td align="left">state</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Client merchant state.</td>
+<td align="center">0-100</td>
+</tr>
+<tr>
+<td align="left">zipcode</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Client merchant zip code.</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">phone</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Client merchant phone.</td>
+<td align="center">1-12</td>
+</tr>
+<tr>
+<td align="left">fax</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Client merchant fax.</td>
+<td align="center">1-12</td>
+</tr>
+<tr>
+<td align="left">trxID</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Merchant unique transaction value.</td>
+<td align="center">1-50</td>
+</tr>
+<tr>
+<td align="left">trxDescription</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Merchant transaction description value.</td>
+<td align="center">1-50</td>
+</tr>
+<tr>
+<td align="left">trxAmount</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Amount for the transaction.</td>
+<td align="center">0.0m</td>
+</tr>
+<tr>
+<td align="left">taxAmount1</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">taxAmount1 value for the transaction.</td>
+<td align="center">0.0m</td>
+</tr>
+<tr>
+<td align="left">taxAmount2</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">taxAmount2 value for the transaction.</td>
+<td align="center">0.0m</td>
+</tr>
+<tr>
+<td align="left">taxAmount3</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">taxAmount3 value for the transaction.</td>
+<td align="center">0.0m</td>
+</tr>
+<tr>
+<td align="left">language</td>
+<td align="center">string</td>
+<td align="center">X</td>
+<td align="left">Language for the transaction.<br><br>en – English / es - Spanish</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">ignoreValues</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Card type that the merchant doesn’t like for the transaction. See <a href="../paymentMethod">Payment Method Codes</a>.</td>
+<td align="center">0-9</td>
+</tr>
+<tr>
+<td align="left">filler1</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Use for general value.</td>
+<td align="center">0-50</td>
+</tr>
+<tr>
+<td align="left">filler2</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Use for general value.</td>
+<td align="center">0-50</td>
+</tr>
+<tr>
+<td align="left">filler3</td>
+<td align="center">string</td>
+<td align="center"></td>
+<td align="left">Use for general value.</td>
+<td align="center">0-50</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-structure">Response Structure</h3>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Parameter</strong></th>
+<th align="center"><strong>Type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">rCode</td>
+<td align="center">string</td>
+<td align="left">Transaction response code. See <a href="../responseCodes">Response Codes</a>.</td>
+</tr>
+<tr>
+<td align="left">rMsg</td>
+<td align="center">string</td>
+<td align="left">Transaction response message. This message includes the checkout URL if the rCode is “00”</td>
+</tr>
+<tr>
+<td align="left">requestID</td>
+<td align="center">string</td>
+<td align="left">Request ID for the transaction.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="error-messages-displayed-in-web-checkout">Error messages displayed in Web Checkout</h2>
+<p>Web Checkout validates the following information before proceeding with the authorization:</p>
+<ul>
+<li>Valid format of card number</li>
+<li>Valid bank’s routing number</li>
+</ul>
+<p>If the customer enters invalid information about the method of payment, the system will show an error message when the payment is rejected. The payment can be rejected by any of the following reasons:</p>
+<ul>
+<li>The card number is incorrect</li>
+<li>The expiration date is incorrect</li>
+<li>The CVV is incorrect</li>
+<li>The PIN entered for an ATH<sup>®</sup> card is incorrect</li>
+<li>The bank account or card does not have sufficient funds</li>
+<li>The routing number entered is invalid</li>
+<li>The bank account number is not valid</li>
+</ul>
+<p>If the Web Checkout page is idle for more than 15 minutes the customer will get an error message indicating that the session expired and will be redirected to the merchant’s page. </p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../credit/" title="Process Credit" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Process Credit
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Evertec Inc., changes by Eliezer Ferrá
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
