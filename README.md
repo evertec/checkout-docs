@@ -1,4 +1,4 @@
-#	Checkout documentation
+# Checkout documentation (https://evertec.github.io/checkout-docs/)
 
 ## Quick start
 
