@@ -37,7 +37,7 @@ Checkout includes several payment services that can be used through Web Checkout
 
 To ensure the security of the data from the customers and merchants and to comply with PCI DSS, we have established the following procedures:
 
-1.	Every connection from the merchant’s application to any of our services has to be made through TLS 1.1 or greater.
+1.	Every connection from the merchant’s application to any of our services has to be made through TLS 1.2 or greater.
 2.	All communications between Evertec and the merchant will be processed through https requests.
 3.	When a merchant registers for the service they are assigned a username and password. The merchant uses the username / password combination as a key for payment requests.
 4.	The merchant must provide a list IP addresses from which the payment service will be accessed. This means that in each call to the service, the merchant identification is validated, as well as the address from which the call is made.
