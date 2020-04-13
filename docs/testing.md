@@ -6,12 +6,12 @@ To facilitate the testing and understanding of the services we are providing a s
 
 | **Type** | **Credential** |
 | :------- | :------------: |
-| username | CERT4549444000009 |
-| password | 433NQ2nE |
+| username | CERT4549444000033 |
+| password | 5B034VrA |
 
 ## Test Cards
 
 | **Type** | **Card Number** | **Expiration Date** | **CVV** |
 | :------- | :-------------: | :-----------------: | :-----: |
-| VISA | 4548400000000631 | 12/2019 | 781 |
+| VISA | 4548400000000631 | 12/2028 | 931 |
 | Mastercard | 5310509031377124 | 12/2025 | 748|
