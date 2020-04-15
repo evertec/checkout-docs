@@ -14,4 +14,3 @@ To facilitate the testing and understanding of the services we are providing a s
 | **Type** | **Card Number** | **Expiration Date** | **CVV** |
 | :------- | :-------------: | :-----------------: | :-----: |
 | VISA | 4548400000000631 | 12/2028 | 931 |
-| Mastercard | 5310509031377124 | 12/2025 | 748|
