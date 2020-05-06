@@ -17,7 +17,7 @@ The  URLs of this service are the following:
  | :------------ | :------: | :----------: | :-------------- | :--------: | 
  | username  | string | X | Merchant username provided by Evertec. | 1-50 | 
  | password | string | X | Merchant password provided by Evertec. | 1-50 | 
- | accountID | string | X | Account number for the client of the merchant. | 1-50 | 
+ | accountID | string | X | Account number for the client of the merchant. | 1-20 | 
  | trxID | string | X | Merchant unique transaction value. | 1-50 | 
  | trxAmount | string | X | Amount for the transaction. | 0.0m | 
 
