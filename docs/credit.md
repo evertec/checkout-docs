@@ -22,7 +22,7 @@ A JSON payload sample can be found [here](../credit_sample#sale)
  | username | string | X | Merchant username provided by Evertec. | 1-50 | 
  | password | string | X | Merchant password provided by Evertec. | 1-50 | 
  | trxOper | string | X | Transaction operations:<br>&nbsp;&nbsp;&nbsp;&nbsp;Sale<br>&nbsp;&nbsp;&nbsp;&nbsp;Reverse<br>&nbsp;&nbsp;&nbsp;&nbsp;Refund | 4-10 | 
- | accountID | string | X | Account number for the client of the merchant. | 1-50 | 
+ | accountID | string | X | Account number for the client of the merchant. | 1-20 | 
  | customerName | string | X | Customer name for the client of the merchant. | 1-100 | 
  | customerEmail | string | X | Customer email for the client of the merchant. | 1-100 | 
  | address1 | string |  | Client merchant address1. | 0-100 | 
@@ -136,7 +136,7 @@ A JSON payload sample can be found [here](../credit_sample#refund)
  | username | string | X | Merchant username provided by Evertec. | 1-50 | 
  | password | string | X | Merchant password provided by Evertec. | 1-50 | 
  | trxOper | string | X | Transaction operations:<br>&nbsp;&nbsp;&nbsp;&nbsp;Sale<br>&nbsp;&nbsp;&nbsp;&nbsp;Reverse<br>&nbsp;&nbsp;&nbsp;&nbsp;Refund | 4-10 | 
- | accountID | string | X | Account number for the client of the merchant. | 1-50 | 
+ | accountID | string | X | Account number for the client of the merchant. | 1-20 | 
  | customerName | string | X | Customer name for the client of the merchant. | 1-100 | 
  | customerEmail | string | X | Customer email for the client of the merchant. | 1-100 | 
  | address1 | string |  | Client merchant address1. | 0-100 | 
