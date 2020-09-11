@@ -2,6 +2,8 @@
 
 In this service, there are no customizations since there are no screens associated with the payment process. The merchant must handle the service response and inform the result of the transaction to the client. The merchant must comply with regulations and data security standards establish by PCI.
 
+***A previous configuration URL's is required to process ATH payments.**
+
 ## Customer Account 
 
 The following services work with the creation, update and removal of a user account.
@@ -15,7 +17,7 @@ The first step to execute a payment with a stored method of payment is for the m
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/Autopay/EnrollmentService.svc/Enroll
+	*	https://uat.mmpay.evertecinc.com/Autopay/EnrollmentService.svc/Enroll
 *	Production
 	*	https://autopay.evertecinc.com/EnrollmentService.svc/Enroll
 
@@ -59,7 +61,7 @@ This service provides the functionality for modifying payment information in the
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/Autopay/EnrollmentService.svc/EditEnroll
+	*	https://uat.mmpay.evertecinc.com/Autopay/EnrollmentService.svc/EditEnroll
 *	Production
 	*	https://autopay.evertecinc.com/EnrollmentService.svc/EditEnroll
 
@@ -102,7 +104,7 @@ This service provides the functionality for delete payment information in the se
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/Autopay/EnrollmentService.svc/DeleteEnroll
+	*	https://uat.mmpay.evertecinc.com/Autopay/EnrollmentService.svc/DeleteEnroll
 *	Production
 	*	https://autopay.evertecinc.com/EnrollmentService.svc/DeleteEnroll
 
@@ -136,7 +138,7 @@ This service will execute a transaction using the stored method of payment of th
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
+	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
 *	Production
 	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
 
@@ -187,6 +189,12 @@ A JSON payload sample can be found [here](../wallet_sample#sale)
  | trxOper | string | Transaction operation. This field must contain SALE, REFUND or REVERSE values. | 
  | trxtype | string | Transaction type. This field must contain DEBIT, CREDIT or ACH values. | 
 
+#### Response Structure for ATH
+| **Parameter** | **Type** | **Description** | 
+| :------------ | :------: | :-------------- | 
+| rCode | string | Transaction response code. See [Response Codes](../responseCodes). | 
+| rMsg | string | Transaction response message. This field must contain a pinpad URL if rCode is 00 (succesfull). | 
+
 ### Reverse Transaction
 
 This service will reverse a transaction.
@@ -196,7 +204,7 @@ This service will reverse a transaction.
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
+	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
 *	Production
 	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
 
@@ -253,7 +261,7 @@ This service will execute a transaction using the stored method of payment of th
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
+	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
 *	Production
 	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessWalletTransaction/
 
