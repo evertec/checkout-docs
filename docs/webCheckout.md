@@ -61,7 +61,7 @@ The programmer must have special considerations when programming the payment but
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
+	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
 *	Production
 	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
 

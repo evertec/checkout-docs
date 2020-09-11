@@ -9,7 +9,7 @@ In this service, there are no customizations since there are no screens associat
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessACH/
+	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessACH/
 *	Production
 	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCredit/
 
@@ -65,7 +65,7 @@ A JSON payload sample can be found [here](../ach_sample#sale)
 The  URLs of this service are the following:
 
 *	Development
-	*	https://mmpaytest.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessACH/
+	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessACH/
 *	Production
 	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCredit/
 
