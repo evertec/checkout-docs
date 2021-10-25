@@ -59,3 +59,6 @@
 |1013|Error Checking Duplicate|
 |1014|No Records To Settle (in the current batch)|
 |1015|No Records To Process (in the current batch)|
+|6000|Plaid Link URL successfully created|
+|6001|Insuficient Funds Available|
+|6002|Decline - Back account pre-verification could not be completed|

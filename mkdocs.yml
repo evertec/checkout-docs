@@ -30,9 +30,9 @@ nav:
         - Process ACH: ach.md
         - Process Wallet: wallet.md
         - Transaction Search: trxSearch.md
-        - Online Response: onlineResponse.md
     - Other Services:
         - ACH Services: achServices.md
+        - ACH Validation: achValidation.md
         - Daily Closing Process: closing.md
     - Testing:
         - Sandbox Credentials: testing.md

@@ -61,9 +61,9 @@ The programmer must have special considerations when programming the payment but
 The  URLs of this service are the following:
 
 *	Development
-	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
+	* https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/ 
 *	Production
-	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
+	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
 
 A JSON payload sample can be found [here](../webCheckout_sample#request-payload)
 
@@ -80,7 +80,7 @@ A JSON payload sample can be found [here](../webCheckout_sample#request-payload)
  | address2 | string |  | Client merchant address2. | 0-100 | 
  | city | string |  | Client merchant city. | 0-100 | 
  | state | string |  | Client merchant state. | 0-100 | 
- | zipcode | string | X | Client merchant zip code. | 5 | 
+ | zipcode | string |  | Client merchant zip code. | 5 | 
  | phone | string |  | Client merchant phone. | 1-12 | 
  | fax | string |  | Client merchant fax. | 1-12 | 
  | trxID | string | X | Merchant unique transaction value. | 1-50 | 
@@ -121,3 +121,7 @@ If the customer enters invalid information about the method of payment, the syst
 *	The bank account number is not valid
 
 If the Web Checkout page is idle for more than 15 minutes the customer will get an error message indicating that the session expired and will be redirected to the merchant’s page. 
+
+## Supported browsers
+
+Web Checkout support the lastest and previous versions of browsers including Chrome (45+), Firefox (38+), Safari (9+), Microsoft Edge and the Internet Explorer 11.
