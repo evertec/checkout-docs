@@ -6,8 +6,8 @@ This section explains the details of integration of the Web Checkout service
 
 ``` JSON
 {
-	"username": "CERT4549444000009",
-	"password": "433NQ2nE",
+	"username": "CERT4549444000033",
+	"password": "5B034VrA",
 	"accountID": "0001",
 	"customerName": "Jesus",
 	"customerEmail": "test@test.com",

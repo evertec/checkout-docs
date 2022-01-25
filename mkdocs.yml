@@ -32,7 +32,6 @@ nav:
         - Transaction Search: trxSearch.md
     - Other Services:
         - ACH Services: achServices.md
-        - ACH Validation: achValidation.md
         - Daily Closing Process: closing.md
     - Testing:
         - Sandbox Credentials: testing.md

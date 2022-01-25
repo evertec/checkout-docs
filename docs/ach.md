@@ -2,6 +2,10 @@
 
 In this service, there are no customizations since there are no screens associated with the payment process. The merchant must handle the service response and inform the result of the transaction to the client. The merchant must comply with regulations and data security standards establish by NACHA.
 
+### ACH Validation
+
+As part of the security measures, the validation of bank account is a required process before processing an ACH transaction. This validation is through Plaid, a third-party service that allows the client to instantly connect their financial account through different options. For more information see [ACH Services](../achServices). 
+
 ## **Sale**
 
 ### Parameter Description
@@ -11,7 +15,7 @@ The  URLs of this service are the following:
 *	Development
 	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessACH/
 *	Production
-	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCredit/
+	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessACH/
 
 A JSON payload sample can be found [here](../ach_sample#sale)
 

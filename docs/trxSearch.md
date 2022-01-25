@@ -6,10 +6,10 @@ This service allows the merchant to locate a specific transaction to verify its 
 
 The  URLs of this service are the following:
 
-*	Development
-	*	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessTransactionSearch/
-*	Production
-	*	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessTransactionSearch/
+*	<b>Development</b> - 
+	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessTransactionSearch/
+*	<b>Production</b> - 
+	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessTransactionSearch/
 
 ### Request Structure
 

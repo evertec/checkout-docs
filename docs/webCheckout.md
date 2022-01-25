@@ -46,6 +46,11 @@ Checkout offers this service in a limited way. When active, Checkout will reques
 
 This service is only available for Web Checkout.
 
+### ACH Validation
+
+As part of the security measures, the validation of bank account is a required process before processing an ACH transaction. This validation is through Plaid, a third-party service that allows the client to instantly connect their financial account through different options. For more information see [ACH Services](../achServices). 
+
+
 ### Implementation
 
 The merchant must be registered in Evertec’s Checkout service and must have a username and a password. Evertec must also know the IP address from which the merchant will access the service. Therefore, the programming to use the service must be on the server side to validate correctly the IP address from which the service is being accessed.
@@ -60,9 +65,9 @@ The programmer must have special considerations when programming the payment but
 
 The  URLs of this service are the following:
 
-*	Development
-	* https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/ 
-*	Production
+*	<b>Development</b> - 
+	https://uat.mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/ 
+*	<b>Production</b> - 
 	https://mmpay.evertecinc.com/WebPaymentAPI/WebPaymentAPI.svc/ProcessCheckoutPayment/
 
 A JSON payload sample can be found [here](../webCheckout_sample#request-payload)

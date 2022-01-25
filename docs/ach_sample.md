@@ -8,8 +8,8 @@ This section explains the details of integration of the Web Checkout service
 
 ``` JSON
 {
-	"username": "CERT4549444000009",
-	"password": "433NQ2nE",
+	"username": "CERT4549444000033",
+	"password": "5B034VrA",
 	"trxOper": "sale",
 	"accountID": "0001",
 	"customerName": "John Doe",
@@ -39,7 +39,7 @@ This section explains the details of integration of the Web Checkout service
 {
 	"authNumber": "227527",
 	"batchNumber": "225",
-	"merchantid": "4549444000009",
+	"merchantid": "4549444000033",
 	"rCode": "0000",
 	"rMsg": "Transaction received and approved",
 	"refNumber": "034680002833",
@@ -57,8 +57,8 @@ This section explains the details of integration of the Web Checkout service
 
 ``` JSON
 {
-	"username": "CERT4549444000009",
-	"password": "433NQ2nE",
+	"username": "CERT4549444000033",
+	"password": "5B034VrA",
 	"trxOper": "reverse",
 	"accountID": "0001",
 	"customerName": "John Doe",
@@ -88,7 +88,7 @@ This section explains the details of integration of the Web Checkout service
 {
 	"authNumber": "227535",
 	"batchNumber": "225",
-	"merchantid": "4549444000009",
+	"merchantid": "4549444000033",
 	"rCode": "0000",
 	"rMsg": "Transaction received and approved",
 	"refNumber": "034680002834",
