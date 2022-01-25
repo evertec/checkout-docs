@@ -387,6 +387,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#response-codes-processach" class="md-nav__link">
+    Response Codes: ProcessACH
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -724,6 +731,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#response-codes-processach" class="md-nav__link">
+    Response Codes: ProcessACH
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -812,6 +826,33 @@ The ACH validation response message will be through an ACH sale using <b>Process
 </tbody>
 </table>
 <p>*This response is only for <b>ProcessACH</b>.</p>
+<h4 id="response-codes-processach">Response Codes: ProcessACH</h4>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>rCode</strong></th>
+<th align="left"><strong>rMsg</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">6000</td>
+<td align="left">Plaid Link URL successfully created</td>
+</tr>
+<tr>
+<td align="left">6001</td>
+<td align="left">Insufficient Funds Available</td>
+</tr>
+<tr>
+<td align="left">6002</td>
+<td align="left">Decline - Back account pre-verification could not be completed</td>
+</tr>
+<tr>
+<td align="left">6003</td>
+<td align="left">Decline - Bank account information is invalid</td>
+</tr>
+</tbody>
+</table>
 <h2 id="ach-return">ACH Return</h2>
 <p>This additional service is optional in the configuration of the Web Payments Service. It is an agreement between the merchant and the Bank. The service consists in generating a report with returned ACH transactions. Additionally, the completed transactions file features a layout that includes returned transactions.</p>
 <h2 id="ach-verification-service">ACH Verification Service</h2>
