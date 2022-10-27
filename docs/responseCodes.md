@@ -62,9 +62,10 @@
 
 
 ## ACH Validation: Process ACH
-| **rCode** | **rMsg** |
-|:------------|:--------------|
-|6000|Plaid Link URL successfully created|
-|6001|Insufficient Funds Available|
-|6002|Decline - Back account pre-verification could not be completed|
-|6003|Decline - Bank account information is invalid|
+ | **rCode** | **rMsg** | 
+ | :------------ | :-------------- | 
+ | 6000 | Plaid Link URL successfully created | 
+ | 6001 | Insufficient Funds Available |
+ | 6002 | Decline - Back account pre-verification could not be completed | 
+ | 6003 | Decline - Bank account information is invalid |
+| 6004 | The financial institution indicated that the user's password or MFA information has changed. The client have to validate through the Plaid Link again. <span style="color:red">*new*</span> | 

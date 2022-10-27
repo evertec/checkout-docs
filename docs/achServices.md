@@ -15,26 +15,14 @@ There are several types of bank account validation through the Plaid Link:
 1. Instant Auth (credential-based) - Flow by default and is verified instantly.
 2. Instant Match (Account and routing number based) - Alternate flow when instant auth is not available. Plaid will ask the user to enter their account number and routing number.
 3. Automated Micro-Deposits - Plaid will make a micro-deposit and then automatically verify within one to two business days.
-4. Same-Day Micro-Deposits – Plaid will make two deposits that will be posted within one business day. Customers are then instructed to manually verify deposited amount within one business day.
+4. Same-Day Micro-Deposits - Plaid will make two deposits that will be posted within one business day. Customers are then instructed to manually verify deposited amount within one business day.
 
 
 -The types of bank account validation depend on the affiliation of the financial institution to Plaid.
 <br/>
 -The minimum browser requirements for Plaid Link: Internet Explorer 11.
-
-#### ProcessACH
-
-The merchant must handle the response and implementation of the "Plaid Link" verification screen. This can be accessed through a URL and will be provided as part of the response message.
-The ACH validation response message will be through an ACH sale using <b>ProcessACH</b>. As long as the client's ACH account has not had a previous validation.
-
-#### Response message: ProcessACH
-
- | **Parameter** | **Type** | **Description** | 
- | :------------ | :------ | :-------------- | 
- | rCode | string | Transaction response code. See [Response Codes](../responseCodes). | 
- | rMsg | string | "Plaid Link" URL. | 
-
- *This response is only for <b>ProcessACH</b>.
+<br/>
+-The Validation of bank accounts will only apply to personal and savings account type. Business bank accounts are exempt from validation. <span style="color:red;font-size:10pt">*new*</span>
 
 ## ACH Return
 
@@ -42,7 +30,7 @@ This additional service is optional in the configuration of the Web Payments Ser
 
 ## ACH Verification Service
 
-This additional service is optional in the configuration of the Web Payments Service. To use this service, the merchant must define a formula that will be used to reject ACH payments. This service searches a Returned ACH Transactions database that contains transactions returned for different reasons at different dates. The merchant’s formula must define quantity of occurrences, frequency and return code. An ACH payment will be rejected if it satisfies the formula.
+This additional service is optional in the configuration of the Web Payments Service. To use this service, the merchant must define a formula that will be used to reject ACH payments. This service searches a Returned ACH Transactions database that contains transactions returned for different reasons at different dates. The merchant's formula must define quantity of occurrences, frequency and return code. An ACH payment will be rejected if it satisfies the formula.
 
 ## ACH Local Bank Service
 

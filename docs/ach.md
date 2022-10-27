@@ -117,3 +117,48 @@ A JSON payload sample can be found [here](../ach_sample#reverse)
  | trxID | string | transaction ID. | 
  | trxOper | string | Transaction operation: SALE or REVERSE. | 
  | trxtype | string | Transaction type: ACH | 
+
+## **ACH Validation**
+
+The merchant must handle the response and implementation of the "Plaid Link" verification screen. This can be accessed through a URL and will be provided as part of the response message.
+The ACH validation response message will be through an ACH sale using <b>ProcessACH</b>.
+
+### Response Structure
+
+ | **Parameter** | **Type** | **Description** | 
+ | :------------ | :------ | :-------------- | 
+ | rCode | string | Transaction response code. See [Response Codes](../responseCodes). | 
+ | rMsg | string | "Plaid Link" URL. | 
+
+### Response Codes
+
+ | **rCode** | **rMsg** | 
+ | :------------ | :-------------- | 
+ | 6000 | Plaid Link URL successfully created | 
+ | 6001 | Insufficient Funds Available |
+ | 6002 | Decline - Back account pre-verification could not be completed | 
+ | 6003 | Decline - Bank account information is invalid |
+ | 6004 | The financial institution indicated that the user's password or MFA information has changed. The client have to validate through the Plaid Link again. <span style="color:red">*new*</span> | 
+
+### User status on Plaid Link &nbsp;<span style="color:red;font-size:10pt">*new*</span>
+
+This allows to know if the client finished the validation flow through the Plaid link correctly, the merchant must create a listener process in the JavaScript file. This response does not indicate the validation status of the client through Plain Link.
+This is just information to indicate if the user's interaction with the plaid screens ended successfully or was closed by the user or by some response error from Plaid.
+
+Object emitted if the user closes the Plaid Link window or if the flow terminates successfully. This will be of type String, which should be cast to JSON.
+
+Example:
+``` JSON
+{
+	"finishedProcess": true,
+    "ClosedByuser": false
+}
+
+```
+Event response:
+
+ | **FinishedProcess** | **ClosedByUser** | **Meaning** | 
+ | :------------ | :------ | :-------------- | 
+ | True | False | Successful process. | 
+ | True | True | Canceled by user. | 
+ | True | False | Plaid process error. | 
