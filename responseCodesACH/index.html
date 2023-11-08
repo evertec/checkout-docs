@@ -12,13 +12,13 @@
         <meta name="author" content="Eliezer Ferrá">
       
       
-        <link rel="canonical" href="https://elio-developer.github.io/checkout/responseCodes/">
+        <link rel="canonical" href="https://elio-developer.github.io/checkout/responseCodesACH/">
       
       
-        <link rel="prev" href="../trxSearch_sample/">
+        <link rel="prev" href="../responseCodes/">
       
       
-        <link rel="next" href="../responseCodesACH/">
+        <link rel="next" href="../paymentMethod/">
       
       
       <link rel="icon" href="../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>General response Code - Checkout</title>
+        <title>Process ACH - Checkout</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General response Code
+              Process ACH
             
           </span>
         </div>
@@ -748,6 +748,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../responseCodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    General response Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -759,28 +779,18 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
   <span class="md-ellipsis">
-    General response Code
+    Process ACH
   </span>
   
 
-      </a>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../responseCodesACH/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -789,6 +799,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#process-ach" class="md-nav__link">
+    Process ACH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-ach-ach-validation" class="md-nav__link">
+    Process ACH : ACH Validation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -849,6 +893,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#process-ach" class="md-nav__link">
+    Process ACH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-ach-ach-validation" class="md-nav__link">
+    Process ACH : ACH Validation
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -863,241 +929,65 @@
 
 
 <h1 id="response-codes">Response Codes</h1>
+<h2 id="process-ach">Process ACH</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;"><strong>rCode</strong></th>
-<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>rMsg</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">00</td>
-<td style="text-align: left;">Approved</td>
+<td style="text-align: left;">0000</td>
+<td style="text-align: left;">Transaction received and approved</td>
 </tr>
 <tr>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">User Authentication Failed</td>
+<td style="text-align: left;">0006</td>
+<td style="text-align: left;">Invalid field received: accttype</td>
 </tr>
 <tr>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Invalid Transaction</td>
+<td style="text-align: left;">0026</td>
+<td style="text-align: left;">Invalid field received: routingnumber</td>
 </tr>
 <tr>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Invalid Transaction Type</td>
+<td style="text-align: left;">4000</td>
+<td style="text-align: left;">Invalid field. See rMsg response. Ex. [ Invalid trxOper field, Invalid customerEmail format, Invalid zipcode, trxAmount format error. Ex. 1000.00,  filler1 cannot be greater than 50, filler2 cannot be greater than 50]</td>
 </tr>
 <tr>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Invalid Amount</td>
+<td style="text-align: left;">9999</td>
+<td style="text-align: left;">Generic error</td>
+</tr>
+</tbody>
+</table>
+<h2 id="process-ach-ach-validation">Process ACH : ACH Validation</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>rCode</strong></th>
+<th style="text-align: left;"><strong>rMsg</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">6000</td>
+<td style="text-align: left;">Plaid Link URL successfully created</td>
 </tr>
 <tr>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Invalid Merchant Information</td>
-</tr>
-<tr>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">Field Format Error</td>
-</tr>
-<tr>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Not a Transaction Server</td>
-</tr>
-<tr>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">Invalid Parameter Stream</td>
-</tr>
-<tr>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Too Many Line Items</td>
-</tr>
-<tr>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">Client Timeout Waiting for Response</td>
-</tr>
-<tr>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">Decline</td>
-</tr>
-<tr>
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">Referral</td>
-</tr>
-<tr>
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">Transaction Type Not Supported In This Version</td>
-</tr>
-<tr>
-<td style="text-align: left;">19</td>
-<td style="text-align: left;">Original Transaction ID Not Found</td>
-</tr>
-<tr>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">Customer Reference Number Not Found</td>
-</tr>
-<tr>
-<td style="text-align: left;">22</td>
-<td style="text-align: left;">Invalid ABA Number</td>
-</tr>
-<tr>
-<td style="text-align: left;">23</td>
-<td style="text-align: left;">Invalid Account Number</td>
-</tr>
-<tr>
-<td style="text-align: left;">24</td>
-<td style="text-align: left;">Invalid Expiration Date</td>
-</tr>
-<tr>
-<td style="text-align: left;">25</td>
-<td style="text-align: left;">Transaction Type Not Supported by Host</td>
-</tr>
-<tr>
-<td style="text-align: left;">26</td>
-<td style="text-align: left;">Invalid Reference Number</td>
-</tr>
-<tr>
-<td style="text-align: left;">27</td>
-<td style="text-align: left;">Invalid Receipt Information</td>
-</tr>
-<tr>
-<td style="text-align: left;">28</td>
-<td style="text-align: left;">Invalid Check Holder Name</td>
-</tr>
-<tr>
-<td style="text-align: left;">29</td>
-<td style="text-align: left;">Invalid Check Number</td>
-</tr>
-<tr>
-<td style="text-align: left;">30</td>
-<td style="text-align: left;">Check DL Verification Requires DL State</td>
-</tr>
-<tr>
-<td style="text-align: left;">40</td>
-<td style="text-align: left;">Transaction did not connect (to NCN because SecureNCIS is not running on the web server)</td>
-</tr>
-<tr>
-<td style="text-align: left;">50</td>
+<td style="text-align: left;">6001</td>
 <td style="text-align: left;">Insufficient Funds Available</td>
 </tr>
 <tr>
-<td style="text-align: left;">99</td>
-<td style="text-align: left;">General Error</td>
+<td style="text-align: left;">6002</td>
+<td style="text-align: left;">Decline - Back account pre-verification could not be completed</td>
 </tr>
 <tr>
-<td style="text-align: left;">100</td>
-<td style="text-align: left;">Invalid Transaction Returned from Host</td>
+<td style="text-align: left;">6003</td>
+<td style="text-align: left;">Decline - Bank account information is invalid</td>
 </tr>
 <tr>
-<td style="text-align: left;">101</td>
-<td style="text-align: left;">Timeout Value too Small or Invalid Time Out Value</td>
-</tr>
-<tr>
-<td style="text-align: left;">102</td>
-<td style="text-align: left;">Processor Not Available</td>
-</tr>
-<tr>
-<td style="text-align: left;">103</td>
-<td style="text-align: left;">Error Reading Response from Host</td>
-</tr>
-<tr>
-<td style="text-align: left;">104</td>
-<td style="text-align: left;">Timeout waiting for Processor Response</td>
-</tr>
-<tr>
-<td style="text-align: left;">105</td>
-<td style="text-align: left;">Credit Error</td>
-</tr>
-<tr>
-<td style="text-align: left;">106</td>
-<td style="text-align: left;">Host Not Available</td>
-</tr>
-<tr>
-<td style="text-align: left;">107</td>
-<td style="text-align: left;">Duplicate Suppression Timeout</td>
-</tr>
-<tr>
-<td style="text-align: left;">108</td>
-<td style="text-align: left;">Void Error</td>
-</tr>
-<tr>
-<td style="text-align: left;">109</td>
-<td style="text-align: left;">Timeout Waiting for Host Response</td>
-</tr>
-<tr>
-<td style="text-align: left;">110</td>
-<td style="text-align: left;">Duplicate Transaction</td>
-</tr>
-<tr>
-<td style="text-align: left;">111</td>
-<td style="text-align: left;">Capture Error</td>
-</tr>
-<tr>
-<td style="text-align: left;">112</td>
-<td style="text-align: left;">Failed AVS Check</td>
-</tr>
-<tr>
-<td style="text-align: left;">113</td>
-<td style="text-align: left;">Cannot Exceed Sales Cap</td>
-</tr>
-<tr>
-<td style="text-align: left;">1000</td>
-<td style="text-align: left;">Generic Host Error</td>
-</tr>
-<tr>
-<td style="text-align: left;">1001</td>
-<td style="text-align: left;">Invalid Login</td>
-</tr>
-<tr>
-<td style="text-align: left;">1002</td>
-<td style="text-align: left;">Insufficient Privilege or Invalid Amount</td>
-</tr>
-<tr>
-<td style="text-align: left;">1003</td>
-<td style="text-align: left;">Invalid Login Blocked</td>
-</tr>
-<tr>
-<td style="text-align: left;">1004</td>
-<td style="text-align: left;">Invalid Login Deactivated</td>
-</tr>
-<tr>
-<td style="text-align: left;">1005</td>
-<td style="text-align: left;">Transaction Type Not Allowed</td>
-</tr>
-<tr>
-<td style="text-align: left;">1006</td>
-<td style="text-align: left;">Unsupported Processor</td>
-</tr>
-<tr>
-<td style="text-align: left;">1007</td>
-<td style="text-align: left;">Invalid Request Message</td>
-</tr>
-<tr>
-<td style="text-align: left;">1008</td>
-<td style="text-align: left;">Invalid Version</td>
-</tr>
-<tr>
-<td style="text-align: left;">1010</td>
-<td style="text-align: left;">Payment Type Not Supported</td>
-</tr>
-<tr>
-<td style="text-align: left;">1011</td>
-<td style="text-align: left;">Error Starting Transaction</td>
-</tr>
-<tr>
-<td style="text-align: left;">1012</td>
-<td style="text-align: left;">Error Finishing Transaction</td>
-</tr>
-<tr>
-<td style="text-align: left;">1013</td>
-<td style="text-align: left;">Error Checking Duplicate</td>
-</tr>
-<tr>
-<td style="text-align: left;">1014</td>
-<td style="text-align: left;">No Records To Settle (in the current batch)</td>
-</tr>
-<tr>
-<td style="text-align: left;">1015</td>
-<td style="text-align: left;">No Records To Process (in the current batch)</td>
+<td style="text-align: left;">6004</td>
+<td style="text-align: left;">The financial institution indicated that the user's password or MFA information has changed. The client have to validate through the Plaid Link again. <span style="color:red"><em>new</em></span></td>
 </tr>
 </tbody>
 </table>
