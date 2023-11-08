@@ -44,6 +44,6 @@ nav:
             - Process Wallet: wallet_sample.md
             - Transaction Search: trxSearch_sample.md
         - Response Codes: 
-            - General response Code: responseCodes.md
+            - General: responseCodes.md
             - Process ACH: responseCodesACH.md
         - Payment Methods: paymentMethod.md
