@@ -1,6 +1,6 @@
 # Response Codes
 
-|**Parameter**|**Description**|
+|**rCode**|**Description**|
 |:------------|:--------------|
 |00|Approved|
 |1|User Authentication Failed|
@@ -59,13 +59,3 @@
 |1013|Error Checking Duplicate|
 |1014|No Records To Settle (in the current batch)|
 |1015|No Records To Process (in the current batch)|
-
-
-## ACH Validation: Process ACH
- | **rCode** | **rMsg** | 
- | :------------ | :-------------- | 
- | 6000 | Plaid Link URL successfully created | 
- | 6001 | Insufficient Funds Available |
- | 6002 | Decline - Back account pre-verification could not be completed | 
- | 6003 | Decline - Bank account information is invalid |
-| 6004 | The financial institution indicated that the user's password or MFA information has changed. The client have to validate through the Plaid Link again. <span style="color:red">*new*</span> | 
