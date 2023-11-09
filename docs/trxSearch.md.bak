@@ -32,8 +32,8 @@ The  URLs of this service are the following:
  | trxDatetime | string | Transaction datetime. | 
  | refNumber | string | Transaction reference number. | 
  | batchNumber | string | Transaction batch number. | 
- | rCode | string | Transacion Search response status. Not transaction status| 
- | rMsg | string | Transaction Search response message. Not transaction status| 
+ | rCode | string | Transaction response code. See [Response Codes](../responseCodes). | 
+ | rMsg | string | Transaction response message. | 
  | authNumber | string | Transaction authorization number. | 
- | statusCode | string | This field show the transaction status in MMPY. See [Response Codes](../responseCodesTRXSearch).  | 
+ | statusCode | string | This field show the transaction status in MMPY. | 
  | requestID | string | Request ID for the transaction. |  
