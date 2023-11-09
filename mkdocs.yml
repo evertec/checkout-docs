@@ -46,4 +46,5 @@ nav:
         - Response Codes: 
             - General: responseCodes.md
             - Process ACH: responseCodesACH.md
+            - TransactionSearch: responseCodesTRXSearch.md
         - Payment Methods: paymentMethod.md
