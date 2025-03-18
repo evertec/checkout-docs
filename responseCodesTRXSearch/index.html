@@ -997,7 +997,7 @@
 
 
 <h1 id="response-codes">Response Codes</h1>
-<h2 id="transaction-search-statuscode">Transaction Search: statusCode</h2>
+<h2 id="transaction-search-statuscode">Transaction Search: <strong>statusCode</strong></h2>
 <table>
 <thead>
 <tr>
@@ -1032,7 +1032,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="transaction-search-rcode">Transaction Search: rCode</h2>
+<h2 id="transaction-search-rcode">Transaction Search: <strong>rCode</strong></h2>
 <table>
 <thead>
 <tr>
@@ -1043,7 +1043,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;">00</td>
-<td style="text-align: left;">Transaction Initiated (The transaction has not been sent for processing)</td>
+<td style="text-align: left;">Transaction search completed. It does not represent the status of the transaction</td>
 </tr>
 <tr>
 <td style="text-align: left;">4000</td>
@@ -1061,12 +1061,15 @@
 <td style="text-align: left;">9999</td>
 <td style="text-align: left;">Generic error. Contact EVERTEC service desk.</td>
 </tr>
-<tr>
-<td style="text-align: left;">Empty String</td>
-<td style="text-align: left;">The service did not identify any transaction with the data received.</td>
-</tr>
 </tbody>
 </table>
+<p><br></p>
+<ul>
+<li>An <strong>empty string</strong> response (<strong>HTTP 200 OK</strong>) means that no transaction was found that matches the data received in the transaction search method.</li>
+<li>Take into consideration that after the reconciliation process, the status of the transactions may change.</li>
+<li>The range for the transaction search at the data level is limited until 3:00 AM the next day, for those transactions that have been included in the reconciliation process.</li>
+<li>It is recommended that the merchant reconciles the transactions using the Lockbox files, LogFile, and PDF Report.</li>
+</ul>
 
 
 
